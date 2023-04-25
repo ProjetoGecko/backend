@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 
@@ -31,14 +32,14 @@ public class Produto {
 	@Size(min = 1, max = 255, message = "O nome da descrição deve ter entre 1 e 255 caracteres.")
 	private String descricao;
 	
-	@NotEmpty
+	@NotNull
 	@PositiveOrZero
 	private BigDecimal preco;
 	
-	@NotEmpty
+	@NotNull
 	private boolean estado;
 	
-	@NotEmpty
+	@NotNull
 	private boolean reciclavel;
 	
 	@NotEmpty
